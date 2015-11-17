@@ -27,6 +27,7 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         panelMaster = new javax.swing.JPanel();
         panelHeader = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -94,10 +95,13 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
         jLabel4.setFont(jLabel4.getFont().deriveFont(jLabel4.getFont().getStyle() | java.awt.Font.BOLD, jLabel4.getFont().getSize()+10));
         jLabel4.setText("CUSTOMER / SUPPLIER");
 
+        buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Customer");
 
+        buttonGroup1.add(jRadioButton4);
         jRadioButton4.setText("Supplier");
 
+        buttonGroup1.add(jRadioButton5);
         jRadioButton5.setText("Customer/Supplier");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -556,6 +560,7 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSearch;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JComboBox<String> jComboBox1;

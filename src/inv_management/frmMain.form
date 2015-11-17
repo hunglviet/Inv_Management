@@ -2,29 +2,6 @@
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.persistence.EntityManager" name="samplePUEntityManager0">
-      <Properties>
-        <Property name="persistenceUnit" type="java.lang.String" value="samplePU"/>
-      </Properties>
-    </Component>
-    <Component class="javax.persistence.Query" name="productQuery">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT p FROM Product p"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="samplePUEntityManager0"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="java.util.List" name="productList">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="productQuery"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;inv_management.Product&gt;"/>
-      </AuxValues>
-    </Component>
     <Menu class="javax.swing.JMenuBar" name="menuBar">
       <Events>
         <EventHandler event="componentHidden" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="menuBarComponentHidden"/>
@@ -342,6 +319,9 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="0" rowCount="0"/>
+                </Property>
                 <Property name="cellSelectionEnabled" type="boolean" value="true"/>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="2"/>
@@ -351,16 +331,6 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="elements" source="productList" target="jTable1" targetPath="elements" updateStrategy="1" immediately="true">
-                  <Property name="nullValue" type="java.util.List" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                    <ComponentRef name="productList"/>
-                  </Property>
-                  <Property name="incompletePathValue" type="java.util.List" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                    <ComponentRef name="productList"/>
-                  </Property>
-                </BindingProperty>
-              </BindingProperties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
               </Events>
@@ -383,22 +353,22 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <EmptySpace min="0" pref="176" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="subMenuPane" min="-2" pref="155" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="subMenuPane" min="-2" pref="156" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="270" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="271" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="subMenuPane" min="-2" pref="249" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -406,6 +376,13 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JScrollPane" name="subMenuPane">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder/>
+              </Border>
+            </Property>
+          </Properties>
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
@@ -414,8 +391,10 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="subMenu">
               <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {null},&#xa;        {null}&#xa;    },&#xa;    new String [] {&#xa;        &quot;Title 1&quot;&#xa;    }&#xa;)" type="code"/>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="1" rowCount="3">
+                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                  </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
@@ -430,6 +409,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="subMenuMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

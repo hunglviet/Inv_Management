@@ -10,6 +10,7 @@ import Form.frmAddCust_Sup;
 import Form.frmAddEmployee;
 import Form.frmAddManufacture;
 import Form.frmAddProduct;
+import Form.frmInwardStock;
 
 /**
  *
@@ -33,11 +34,7 @@ public class frmMain extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        samplePUEntityManager0 = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("samplePU").createEntityManager();
-        productQuery = java.beans.Beans.isDesignTime() ? null : samplePUEntityManager0.createQuery("SELECT p FROM Product p");
-        productList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : productQuery.getResultList();
         footer = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         jPanel2 = new javax.swing.JPanel();
@@ -155,14 +152,16 @@ public class frmMain extends javax.swing.JFrame {
         Table.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jTable1.setAutoCreateRowSorter(true);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         jTable1.setCellSelectionEnabled(true);
         jTable1.setInheritsPopupMenu(true);
-
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, productList, jTable1);
-        jTableBinding.setSourceNullValue(productList);
-        jTableBinding.setSourceUnreadableValue(productList);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -189,8 +188,11 @@ public class frmMain extends javax.swing.JFrame {
 
         ScrollMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        subMenuPane.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
         subMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null},
                 {null},
                 {null}
             },
@@ -198,6 +200,11 @@ public class frmMain extends javax.swing.JFrame {
                 "Title 1"
             }
         ));
+        subMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                subMenuMouseClicked(evt);
+            }
+        });
         subMenuPane.setViewportView(subMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
@@ -206,19 +213,19 @@ public class frmMain extends javax.swing.JFrame {
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 176, Short.MAX_VALUE)
             .addGroup(ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ScrollMenuLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(subMenuPane, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ScrollMenuLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(subMenuPane, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
         ScrollMenuLayout.setVerticalGroup(
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGap(0, 271, Short.MAX_VALUE)
             .addGroup(ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ScrollMenuLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ScrollMenuLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(subMenuPane, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         paneMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -475,8 +482,6 @@ public class frmMain extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bindingGroup.bind();
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -568,6 +573,16 @@ public class frmMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnManufacture1MouseClicked
 
+    private void subMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subMenuMouseClicked
+        // TODO add your handling code here:
+        int[] a = this.subMenu.getSelectedRows();
+        if (a[0]==0){
+            new frmInwardStock().setVisible(true);
+            
+        }
+        
+    }//GEN-LAST:event_subMenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -644,14 +659,10 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JPanel paneMenu;
     private javax.swing.JMenuItem pasteMenuItem;
-    private java.util.List<inv_management.Product> productList;
-    private javax.persistence.Query productQuery;
-    private javax.persistence.EntityManager samplePUEntityManager0;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JTable subMenu;
     private javax.swing.JScrollPane subMenuPane;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
 }
