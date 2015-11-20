@@ -5,13 +5,6 @@
  */
 package inv_management;
 
-import Form.frmAddCategory;
-import Form.frmAddCust_Sup;
-import Form.frmAddEmployee;
-import Form.frmAddManufacture;
-import Form.frmAddProduct;
-import Form.frmInwardStock;
-
 /**
  *
  * @author lvhung
@@ -49,18 +42,16 @@ public class frmMain extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         ScrollMenu = new javax.swing.JPanel();
-        subMenuPane = new javax.swing.JScrollPane();
-        subMenu = new javax.swing.JTable();
         paneMenu = new javax.swing.JPanel();
         btnProduct = new javax.swing.JButton();
-        btnInventory = new javax.swing.JButton();
+        btnOrderEntry = new javax.swing.JButton();
         btnCustSup = new javax.swing.JButton();
         btnEmployee = new javax.swing.JButton();
         btnDepartment = new javax.swing.JButton();
         btnBinCard = new javax.swing.JButton();
-        btnCategory = new javax.swing.JButton();
         btnManufacture = new javax.swing.JButton();
-        btnManufacture1 = new javax.swing.JButton();
+        btnOtherList = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         lblHeader = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
@@ -174,9 +165,9 @@ public class frmMain extends javax.swing.JFrame {
         Table.setLayout(TableLayout);
         TableLayout.setHorizontalGroup(
             TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TableLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TableLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
                 .addContainerGap())
         );
         TableLayout.setVerticalGroup(
@@ -186,46 +177,18 @@ public class frmMain extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        ScrollMenu.setBackground(new java.awt.Color(255, 255, 255));
         ScrollMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        subMenuPane.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        subMenu.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Title 1"
-            }
-        ));
-        subMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                subMenuMouseClicked(evt);
-            }
-        });
-        subMenuPane.setViewportView(subMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
         ScrollMenu.setLayout(ScrollMenuLayout);
         ScrollMenuLayout.setHorizontalGroup(
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 176, Short.MAX_VALUE)
-            .addGroup(ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ScrollMenuLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(subMenuPane, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         ScrollMenuLayout.setVerticalGroup(
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 271, Short.MAX_VALUE)
-            .addGroup(ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ScrollMenuLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(subMenuPane, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGap(0, 368, Short.MAX_VALUE)
         );
 
         paneMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -238,11 +201,11 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnInventory.setText("Inventory");
-        btnInventory.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnInventory.addActionListener(new java.awt.event.ActionListener() {
+        btnOrderEntry.setText("Order entry");
+        btnOrderEntry.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOrderEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInventoryActionPerformed(evt);
+                btnOrderEntryActionPerformed(evt);
             }
         });
 
@@ -278,14 +241,6 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnCategory.setText("Category");
-        btnCategory.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnCategory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCategoryActionPerformed(evt);
-            }
-        });
-
         btnManufacture.setText("Manufacture");
         btnManufacture.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnManufacture.addActionListener(new java.awt.event.ActionListener() {
@@ -294,16 +249,11 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnManufacture1.setText("Order Entry");
-        btnManufacture1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnManufacture1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnManufacture1MouseClicked(evt);
-            }
-        });
-        btnManufacture1.addActionListener(new java.awt.event.ActionListener() {
+        btnOtherList.setText("Other lists");
+        btnOtherList.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOtherList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManufacture1ActionPerformed(evt);
+                btnOtherListActionPerformed(evt);
             }
         });
 
@@ -311,29 +261,30 @@ public class frmMain extends javax.swing.JFrame {
         paneMenu.setLayout(paneMenuLayout);
         paneMenuLayout.setHorizontalGroup(
             paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnCustSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnInventory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCategory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManufacture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManufacture1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(250, 250, 250))
+            .addGroup(paneMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneMenuLayout.createSequentialGroup()
+                        .addGroup(paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                            .addComponent(btnManufacture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCustSup, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator1)
+                    .addComponent(btnOrderEntry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         paneMenuLayout.setVerticalGroup(
             paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnManufacture1)
+                .addComponent(btnOtherList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnManufacture)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCategory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBinCard)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -343,7 +294,9 @@ public class frmMain extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCustSup)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnInventory)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnOrderEntry)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnProduct)
                 .addContainerGap())
@@ -455,8 +408,8 @@ public class frmMain extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ScrollMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(paneMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 180, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                            .addComponent(paneMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(footer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -476,8 +429,8 @@ public class frmMain extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ScrollMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ScrollMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(paneMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -492,19 +445,19 @@ public class frmMain extends javax.swing.JFrame {
 
     private void btnCustSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSupActionPerformed
         // TODO add your handling code here:
-        new frmAddCust_Sup().setVisible(true);
+        //new frmAddCust_Sup().setVisible(true);
         this.lblHeader.setText(this.btnCustSup.getText());
     }//GEN-LAST:event_btnCustSupActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
         // TODO add your handling code here:
-        new frmAddEmployee().setVisible(true);
+        //new frmAddEmployee().setVisible(true);
         this.lblHeader.setText(this.btnEmployee.getText());
     }//GEN-LAST:event_btnEmployeeActionPerformed
 
     private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
         // TODO add your handling code here:
-        new frmAddProduct().setVisible(true);
+        new frmProduct().setVisible(true);
         this.lblHeader.setText(this.btnProduct.getText());
 
 
@@ -514,10 +467,10 @@ public class frmMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblHeaderComponentShown
 
-    private void btnInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventoryActionPerformed
+    private void btnOrderEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderEntryActionPerformed
         // TODO add your handling code here:
-        this.lblHeader.setText(this.btnInventory.getText());
-    }//GEN-LAST:event_btnInventoryActionPerformed
+        this.lblHeader.setText(this.btnOrderEntry.getText());
+    }//GEN-LAST:event_btnOrderEntryActionPerformed
 
     private void btnDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepartmentActionPerformed
         // TODO add your handling code here:
@@ -537,15 +490,9 @@ public class frmMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowStateChanged
 
-    private void btnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoryActionPerformed
-        // TODO add your handling code here:
-        new frmAddCategory().setVisible(true);
-        this.lblHeader.setText(this.btnCategory.getText());
-    }//GEN-LAST:event_btnCategoryActionPerformed
-
     private void btnManufactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManufactureActionPerformed
         // TODO add your handling code here:
-        new frmAddManufacture().setVisible(true);
+        //new frmAddManufacture().setVisible(true);
         this.lblHeader.setText(this.btnManufacture.getText());
 
     }//GEN-LAST:event_btnManufactureActionPerformed
@@ -554,34 +501,9 @@ public class frmMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void btnManufacture1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManufacture1ActionPerformed
+    private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_btnManufacture1ActionPerformed
-
-    private void btnManufacture1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManufacture1MouseClicked
-        // TODO add your handling code here:
-        subMenu.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                    {"Order"},
-                    {"Purchase"}
-                },
-                new String[]{
-                    "Order Entry"
-                }
-        ));
-
-    }//GEN-LAST:event_btnManufacture1MouseClicked
-
-    private void subMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subMenuMouseClicked
-        // TODO add your handling code here:
-        int[] a = this.subMenu.getSelectedRows();
-        if (a[0]==0){
-            new frmInwardStock().setVisible(true);
-            
-        }
-        
-    }//GEN-LAST:event_subMenuMouseClicked
+    }//GEN-LAST:event_btnOtherListActionPerformed
 
     /**
      * @param args the command line arguments
@@ -629,15 +551,14 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JButton bntPrint;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBinCard;
-    private javax.swing.JButton btnCategory;
     private javax.swing.JButton btnCustSup;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDepartment;
     private javax.swing.JButton btnEmployee;
     private javax.swing.JButton btnFind;
-    private javax.swing.JButton btnInventory;
     private javax.swing.JButton btnManufacture;
-    private javax.swing.JButton btnManufacture1;
+    private javax.swing.JButton btnOrderEntry;
+    private javax.swing.JButton btnOtherList;
     private javax.swing.JButton btnProduct;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -652,6 +573,7 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lblHeader;
@@ -661,8 +583,6 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private javax.swing.JTable subMenu;
-    private javax.swing.JScrollPane subMenuPane;
     // End of variables declaration//GEN-END:variables
 
 }

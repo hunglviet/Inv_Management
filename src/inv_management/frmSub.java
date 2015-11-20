@@ -5,8 +5,8 @@
  */
 package inv_management;
 
-import Form.frmAddCust_Sup;
-import Form.frmAddEmployee;
+import AddNew.frmAddCust_Sup;
+import AddNew.frmAddEmployee;
 
 /**
  *
