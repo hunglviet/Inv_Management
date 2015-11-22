@@ -56,7 +56,7 @@ public class frmMain extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         ScrollMenu = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        SubMenu = new javax.swing.JTable();
         paneMenu = new javax.swing.JPanel();
         btnProduct = new javax.swing.JButton();
         btnStoreOutputSplit = new javax.swing.JButton();
@@ -188,13 +188,13 @@ public class frmMain extends javax.swing.JFrame {
         TableLayout.setVerticalGroup(
             TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TableLayout.createSequentialGroup()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         ScrollMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null}
@@ -203,23 +203,17 @@ public class frmMain extends javax.swing.JFrame {
                 "Title 1"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(SubMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
         ScrollMenu.setLayout(ScrollMenuLayout);
         ScrollMenuLayout.setHorizontalGroup(
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ScrollMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         ScrollMenuLayout.setVerticalGroup(
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ScrollMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         paneMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -329,7 +323,7 @@ public class frmMain extends javax.swing.JFrame {
                 .addComponent(btnCustSup)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnManufacture)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDepartment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEmployee)
@@ -570,6 +564,20 @@ public class frmMain extends javax.swing.JFrame {
         new CloseOtherWindows().closeWin();
         new frmListInwardStore().setVisible(true);
         //this.lblHeader.setText(this.btnInwardStore.getText());
+        //tao menu report
+        //tbReport = new javax.swing.JTable();
+
+        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{
+                    {"Purchase by supplier"},
+                    {"Purchase by product"},
+                    {"Purchae by employee"}
+                    
+                },
+                new String[]{
+                    "Report"
+                }
+        ));
     }//GEN-LAST:event_btnInwardStoreActionPerformed
 
     /**
@@ -736,6 +744,7 @@ public class frmMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ScrollMenu;
+    private javax.swing.JTable SubMenu;
     private javax.swing.JPanel Table;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JButton bntEdit;
@@ -767,7 +776,6 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lblHeader;
     private javax.swing.JMenuBar menuBar;

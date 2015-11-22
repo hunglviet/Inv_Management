@@ -20,6 +20,14 @@ public class frmListBinCard extends javax.swing.JFrame {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         this.lblHeader.setText(this.btnBinCard.getText());
+        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{
+                    {"Print Book Stote"}
+                    
+
+                },
+                new String[]{"Report"}));
+
 
     }
 
@@ -47,7 +55,7 @@ public class frmListBinCard extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         ScrollMenu = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        SubMenu = new javax.swing.JTable();
         paneMenu = new javax.swing.JPanel();
         btnProduct = new javax.swing.JButton();
         btnStoreOutputSplit = new javax.swing.JButton();
@@ -184,7 +192,7 @@ public class frmListBinCard extends javax.swing.JFrame {
 
         ScrollMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null}
             },
@@ -192,7 +200,7 @@ public class frmListBinCard extends javax.swing.JFrame {
                 "Title 1"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(SubMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
         ScrollMenu.setLayout(ScrollMenuLayout);
@@ -207,7 +215,7 @@ public class frmListBinCard extends javax.swing.JFrame {
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ScrollMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -318,7 +326,7 @@ public class frmListBinCard extends javax.swing.JFrame {
                 .addComponent(btnCustSup)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnManufacture)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDepartment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEmployee)
@@ -1108,6 +1116,7 @@ public class frmListBinCard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ScrollMenu;
+    private javax.swing.JTable SubMenu;
     private javax.swing.JPanel Table;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JButton bntEdit;
@@ -1139,7 +1148,6 @@ public class frmListBinCard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lblHeader;
     private javax.swing.JMenuBar menuBar;
