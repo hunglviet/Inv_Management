@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Form;
+package AddNew;
 
 /**
  *
@@ -32,8 +32,6 @@ public class frmAddManufacture extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         panelNavigator = new javax.swing.JPanel();
         Navigator = new javax.swing.JPanel();
-        btnSearch = new javax.swing.JButton();
-        btnNew = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
@@ -61,6 +59,7 @@ public class frmAddManufacture extends javax.swing.JFrame {
         jTextField24 = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
         jTextField25 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         panelContact1 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         jTextField32 = new javax.swing.JTextField();
@@ -108,12 +107,6 @@ public class frmAddManufacture extends javax.swing.JFrame {
         panelNavigator.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         Navigator.setLayout(new java.awt.GridLayout(1, 0));
-
-        btnSearch.setText("Search");
-        Navigator.add(btnSearch);
-
-        btnNew.setText("New");
-        Navigator.add(btnNew);
 
         btnRefresh.setText("Refresh");
         Navigator.add(btnRefresh);
@@ -195,6 +188,13 @@ public class frmAddManufacture extends javax.swing.JFrame {
 
         jLabel37.setText("Job title");
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelContactLayout = new javax.swing.GroupLayout(panelContact);
         panelContact.setLayout(panelContactLayout);
         panelContactLayout.setHorizontalGroup(
@@ -222,9 +222,12 @@ public class frmAddManufacture extends javax.swing.JFrame {
                             .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.TRAILING, 0, 145, Short.MAX_VALUE)
-                            .addComponent(jTextField22, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField22, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelContactLayout.createSequentialGroup()
+                                .addComponent(jComboBox4, 0, 116, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(10, 10, 10))
                     .addGroup(panelContactLayout.createSequentialGroup()
                         .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -269,7 +272,8 @@ public class frmAddManufacture extends javax.swing.JFrame {
                     .addComponent(jLabel28)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
@@ -446,6 +450,11 @@ public class frmAddManufacture extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnCloseActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new frmAddCountry().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -516,10 +525,9 @@ public class frmAddManufacture extends javax.swing.JFrame {
     private javax.swing.JPanel Navigator;
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnNew;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;

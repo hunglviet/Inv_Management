@@ -134,7 +134,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Category"/>
+                <Property name="text" type="java.lang.String" value="Country"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField2">
@@ -156,8 +156,6 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="Navigator" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -168,10 +166,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBox1" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="Navigator" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="Navigator" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -200,11 +195,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Discontinued"/>
-          </Properties>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

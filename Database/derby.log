@@ -1,0 +1,33 @@
+Fri Nov 20 05:37:35 ICT 2015 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Fri Nov 20 05:40:15 ICT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0151-21e5-52c4-00006934fe30 
+on database directory D:\NetBeansProjects\Inv_Management\Database\APPMENU with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_65/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_65-b17
+user.dir=C:\Program Files\Java\jdk1.8.0_65\db
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=D:\NetBeansProjects\Inv_Management\Database
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 20 05:40:18 ICT 2015:
+Shutting down instance a816c00e-0151-21e5-52c4-00006934fe30 on database directory D:\NetBeansProjects\Inv_Management\Database\APPMENU with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Fri Nov 20 05:40:18 ICT 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = APPMENU), (DRDAID = {2}), Database 'APPMENU' shutdown.
+----------------------------------------------------------------
+Fri Nov 20 05:40:30 ICT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a65c80ac-0151-21e5-52c4-00006934fe30 
+on database directory D:\NetBeansProjects\Inv_Management\Database\APPMENU with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_65/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_65-b17
+user.dir=C:\Program Files\Java\jdk1.8.0_65\db
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=D:\NetBeansProjects\Inv_Management\Database
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Nov 21 18:24:46 ICT 2015: Shutting down Derby engine

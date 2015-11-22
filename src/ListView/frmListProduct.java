@@ -3,20 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inv_management;
+package ListView;
+
+import inv_management.*;
 
 /**
  *
  * @author lvhung
  */
-public class frmProduct extends javax.swing.JFrame {
+public class frmListProduct extends javax.swing.JFrame {
 
     /**
      * Creates new form frmMain
      */
-    public frmProduct() {
+    public frmListProduct() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        this.lblHeader.setText(this.btnProduct.getText());
 
     }
 
@@ -28,11 +31,7 @@ public class frmProduct extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        APPMENUPUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("APPMENUPU").createEntityManager();
-        tbAppmenuQuery = java.beans.Beans.isDesignTime() ? null : APPMENUPUEntityManager.createQuery("SELECT t FROM TbAppmenu t");
-        tbAppmenuList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tbAppmenuQuery.getResultList();
         footer = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         jPanel2 = new javax.swing.JPanel();
@@ -51,14 +50,15 @@ public class frmProduct extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         paneMenu = new javax.swing.JPanel();
         btnProduct = new javax.swing.JButton();
-        btnOrderEntry = new javax.swing.JButton();
+        btnStoreOutputSplit = new javax.swing.JButton();
         btnCustSup = new javax.swing.JButton();
         btnEmployee = new javax.swing.JButton();
         btnDepartment = new javax.swing.JButton();
         btnBinCard = new javax.swing.JButton();
         btnManufacture = new javax.swing.JButton();
         btnOtherList = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        btnInwardStore = new javax.swing.JButton();
+        panelHeader = new javax.swing.JPanel();
         lblHeader = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -75,7 +75,7 @@ public class frmProduct extends javax.swing.JFrame {
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
-        setTitle("Product");
+        setTitle("List Product");
         addWindowStateListener(new java.awt.event.WindowStateListener() {
             public void windowStateChanged(java.awt.event.WindowEvent evt) {
                 formWindowStateChanged(evt);
@@ -184,12 +184,14 @@ public class frmProduct extends javax.swing.JFrame {
 
         ScrollMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tbAppmenuList, jTable2);
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${submenu}"));
-        columnBinding.setColumnName("Add");
-        columnBinding.setColumnClass(String.class);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
@@ -205,7 +207,7 @@ public class frmProduct extends javax.swing.JFrame {
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ScrollMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -219,11 +221,11 @@ public class frmProduct extends javax.swing.JFrame {
             }
         });
 
-        btnOrderEntry.setText("Order entry");
-        btnOrderEntry.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOrderEntry.addActionListener(new java.awt.event.ActionListener() {
+        btnStoreOutputSplit.setText("Store output split");
+        btnStoreOutputSplit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnStoreOutputSplit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrderEntryActionPerformed(evt);
+                btnStoreOutputSplitActionPerformed(evt);
             }
         });
 
@@ -275,6 +277,14 @@ public class frmProduct extends javax.swing.JFrame {
             }
         });
 
+        btnInwardStore.setText("Inward Stote");
+        btnInwardStore.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInwardStore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInwardStoreActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout paneMenuLayout = new javax.swing.GroupLayout(paneMenu);
         paneMenu.setLayout(paneMenuLayout);
         paneMenuLayout.setHorizontalGroup(
@@ -284,33 +294,36 @@ public class frmProduct extends javax.swing.JFrame {
                 .addGroup(paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnCustSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOrderEntry, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStoreOutputSplit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManufacture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInwardStore, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         paneMenuLayout.setVerticalGroup(
             paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOtherList)
+                .addComponent(btnInwardStore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnManufacture)
+                .addComponent(btnStoreOutputSplit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBinCard)
+                .addGap(4, 4, 4)
+                .addComponent(btnProduct)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCustSup)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnManufacture)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDepartment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEmployee)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCustSup)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOrderEntry)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnProduct)
+                .addComponent(btnOtherList)
                 .addContainerGap())
         );
 
@@ -321,18 +334,18 @@ public class frmProduct extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
+        panelHeader.setLayout(panelHeaderLayout);
+        panelHeaderLayout.setHorizontalGroup(
+            panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblHeader)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelHeaderLayout.setVerticalGroup(
+            panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(lblHeader)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -425,7 +438,7 @@ public class frmProduct extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(footer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(panelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -433,7 +446,7 @@ public class frmProduct extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -447,8 +460,6 @@ public class frmProduct extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bindingGroup.bind();
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -460,21 +471,29 @@ public class frmProduct extends javax.swing.JFrame {
     private void btnCustSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSupActionPerformed
         // TODO add your handling code here:
         //new frmAddCust_Sup().setVisible(true);
-        this.lblHeader.setText(this.btnCustSup.getText());
+        new CloseOtherWindows().closeWin();
+
+        new frmListCustSupp().setVisible(true);
+
+       // this.lblHeader.setText(this.btnCustSup.getText());
     }//GEN-LAST:event_btnCustSupActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
         // TODO add your handling code here:
         //new frmAddEmployee().setVisible(true);
-        this.lblHeader.setText(this.btnEmployee.getText());
+        new CloseOtherWindows().closeWin();
+
+        new frmListEmployee().setVisible(true);
+        //this.lblHeader.setText(this.btnProduct.getText());
+       // this.lblHeader.setText(this.btnEmployee.getText());
     }//GEN-LAST:event_btnEmployeeActionPerformed
 
     private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
-        
-        new frmProduct().setVisible(true);
-        this.lblHeader.setText(this.btnProduct.getText());
+
+        new frmListProduct().setVisible(true);
+       // this.lblHeader.setText(this.btnProduct.getText());
 
 
     }//GEN-LAST:event_btnProductActionPerformed
@@ -483,19 +502,27 @@ public class frmProduct extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblHeaderComponentShown
 
-    private void btnOrderEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderEntryActionPerformed
+    private void btnStoreOutputSplitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreOutputSplitActionPerformed
         // TODO add your handling code here:
-        this.lblHeader.setText(this.btnOrderEntry.getText());
-    }//GEN-LAST:event_btnOrderEntryActionPerformed
+        new CloseOtherWindows().closeWin();
+        new frmLisStoreOutputSplit().setVisible(true);
+       // this.lblHeader.setText(this.btnProduct.getText());
+    }//GEN-LAST:event_btnStoreOutputSplitActionPerformed
 
     private void btnDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepartmentActionPerformed
         // TODO add your handling code here:
-        this.lblHeader.setText(this.btnDepartment.getText());
+        new CloseOtherWindows().closeWin();
+
+        new frmListDepartment().setVisible(true);
+        //this.lblHeader.setText(this.btnProduct.getText());
+       // this.lblHeader.setText(this.btnDepartment.getText());
     }//GEN-LAST:event_btnDepartmentActionPerformed
 
     private void btnBinCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinCardActionPerformed
         // TODO add your handling code here:
-        this.lblHeader.setText(this.btnBinCard.getText());
+        new CloseOtherWindows().closeWin();
+        new frmListBinCard().setVisible(true);
+       // this.lblHeader.setText(this.btnBinCard.getText());
     }//GEN-LAST:event_btnBinCardActionPerformed
 
     private void menuBarComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_menuBarComponentHidden
@@ -509,7 +536,11 @@ public class frmProduct extends javax.swing.JFrame {
     private void btnManufactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManufactureActionPerformed
         // TODO add your handling code here:
         //new frmAddManufacture().setVisible(true);
-        this.lblHeader.setText(this.btnManufacture.getText());
+        new CloseOtherWindows().closeWin();
+
+        new frmListManufacture().setVisible(true);
+        //this.lblHeader.setText(this.btnProduct.getText());
+       // this.lblHeader.setText(this.btnManufacture.getText());
 
     }//GEN-LAST:event_btnManufactureActionPerformed
 
@@ -520,6 +551,13 @@ public class frmProduct extends javax.swing.JFrame {
     private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOtherListActionPerformed
+
+    private void btnInwardStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInwardStoreActionPerformed
+        // TODO add your handling code here:
+        new CloseOtherWindows().closeWin();
+        new frmListInwardStore().setVisible(true);
+        //this.lblHeader.setText(this.btnInwardStore.getText());
+    }//GEN-LAST:event_btnInwardStoreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -538,8 +576,512 @@ public class frmProduct extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmListProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -557,13 +1099,12 @@ public class frmProduct extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmProduct().setVisible(true);
+                new frmListProduct().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.persistence.EntityManager APPMENUPUEntityManager;
     private javax.swing.JPanel ScrollMenu;
     private javax.swing.JPanel Table;
     private javax.swing.JMenuItem aboutMenuItem;
@@ -577,10 +1118,11 @@ public class frmProduct extends javax.swing.JFrame {
     private javax.swing.JButton btnDepartment;
     private javax.swing.JButton btnEmployee;
     private javax.swing.JButton btnFind;
+    private javax.swing.JButton btnInwardStore;
     private javax.swing.JButton btnManufacture;
-    private javax.swing.JButton btnOrderEntry;
     private javax.swing.JButton btnOtherList;
     private javax.swing.JButton btnProduct;
+    private javax.swing.JButton btnStoreOutputSplit;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -590,7 +1132,6 @@ public class frmProduct extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JPanel footer;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
@@ -602,12 +1143,10 @@ public class frmProduct extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JPanel paneMenu;
+    private javax.swing.JPanel panelHeader;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private java.util.List<inv_management.TbAppmenu> tbAppmenuList;
-    private javax.persistence.Query tbAppmenuQuery;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
 }
