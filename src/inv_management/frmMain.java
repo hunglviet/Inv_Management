@@ -12,6 +12,7 @@ import ListView.frmListDepartment;
 import ListView.frmListEmployee;
 import ListView.frmListInwardStore;
 import ListView.frmListManufacture;
+import ListView.frmListOther;
 import ListView.frmListProduct;
 
 /**
@@ -82,7 +83,7 @@ public class frmMain extends javax.swing.JFrame {
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
-        setTitle("Product");
+        setTitle("Inventory Managment");
         addWindowStateListener(new java.awt.event.WindowStateListener() {
             public void windowStateChanged(java.awt.event.WindowEvent evt) {
                 formWindowStateChanged(evt);
@@ -334,7 +335,7 @@ public class frmMain extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lblHeader.setText("INVENTORY");
+        lblHeader.setText("INVENTORY MANAGMENT");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 lblHeaderComponentShown(evt);
@@ -557,6 +558,8 @@ public class frmMain extends javax.swing.JFrame {
 
     private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
         // TODO add your handling code here:
+        new CloseOtherWindows().closeWin();
+        new frmListOther().setVisible(true);
     }//GEN-LAST:event_btnOtherListActionPerformed
 
     private void btnInwardStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInwardStoreActionPerformed
