@@ -27,6 +27,7 @@ public class frmMain extends javax.swing.JFrame {
     public frmMain() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        new CloseOtherWindows().closeWin();
         //this.lblHeader.setText(this.btnBinCard.getText());
 
     }
@@ -83,6 +84,7 @@ public class frmMain extends javax.swing.JFrame {
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inventory Managment");
         addWindowStateListener(new java.awt.event.WindowStateListener() {
             public void windowStateChanged(java.awt.event.WindowEvent evt) {
@@ -194,6 +196,7 @@ public class frmMain extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null},
                 {null}
             },
             new String [] {
@@ -580,7 +583,8 @@ public class frmMain extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if (!"Windows".equals(info.getName())) {
+                } else {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

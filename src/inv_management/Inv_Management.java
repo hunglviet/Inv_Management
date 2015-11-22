@@ -16,7 +16,7 @@ public class Inv_Management {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new frmMain().setVisible(true);
+        new frmSub().setVisible(true);
     }
     
 }

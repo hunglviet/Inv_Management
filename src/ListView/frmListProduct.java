@@ -556,6 +556,8 @@ public class frmListProduct extends javax.swing.JFrame {
 
     private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
         // TODO add your handling code here:
+        new CloseOtherWindows().closeWin();
+        new frmListOther().setVisible(true);
     }//GEN-LAST:event_btnOtherListActionPerformed
 
     private void btnInwardStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInwardStoreActionPerformed

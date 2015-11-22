@@ -5,6 +5,7 @@
  */
 package ListView;
 
+import AddNew.frmAddManufacture;
 import inv_management.*;
 
 /**
@@ -94,6 +95,11 @@ public class frmListManufacture extends javax.swing.JFrame {
         btnAdd.setFocusable(false);
         btnAdd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAdd.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnAdd);
 
         bntEdit.setText("Edit");
@@ -550,6 +556,8 @@ public class frmListManufacture extends javax.swing.JFrame {
 
     private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
         // TODO add your handling code here:
+        new CloseOtherWindows().closeWin();
+        new frmListOther().setVisible(true);
     }//GEN-LAST:event_btnOtherListActionPerformed
 
     private void btnInwardStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInwardStoreActionPerformed
@@ -558,6 +566,11 @@ public class frmListManufacture extends javax.swing.JFrame {
         new frmListInwardStore().setVisible(true);
         //this.lblHeader.setText(this.btnInwardStore.getText());
     }//GEN-LAST:event_btnInwardStoreActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        new frmAddManufacture().setVisible(true);
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
