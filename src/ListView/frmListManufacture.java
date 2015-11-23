@@ -24,8 +24,8 @@ public class frmListManufacture extends javax.swing.JFrame {
         
         SubMenu.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                    {"Print list Manufacture"},
-                    {"Print list Supplier"}
+                    {"Print list Manufacture"}
+                   
                     
 
                 },

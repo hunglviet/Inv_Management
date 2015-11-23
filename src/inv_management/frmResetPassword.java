@@ -58,7 +58,7 @@ public class frmResetPassword extends javax.swing.JFrame {
 
         jLabel2.setText("User");
 
-        jLabel5.setText("Old password");
+        jLabel5.setText("Identity #");
 
         jLabel6.setText("New password");
 
@@ -253,7 +253,7 @@ public class frmResetPassword extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        new frmMain().setVisible(true);
+        new frmLogin().setVisible(true);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     /**

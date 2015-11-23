@@ -253,7 +253,7 @@ public class frmChangePassword extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        new frmMain().setVisible(true);
+        new frmLogin().setVisible(true);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
