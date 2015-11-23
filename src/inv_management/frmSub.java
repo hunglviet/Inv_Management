@@ -5,9 +5,6 @@
  */
 package inv_management;
 
-import AddNew.frmAddCust_Sup;
-import AddNew.frmAddEmployee;
-
 /**
  *
  * @author lvhung
