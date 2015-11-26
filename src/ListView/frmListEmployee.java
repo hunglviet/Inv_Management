@@ -344,7 +344,7 @@ public class frmListEmployee extends javax.swing.JFrame {
         );
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("INVENTORY MANAGMENT");
+        lblHeader.setText("EMPLOYEE");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 lblHeaderComponentShown(evt);

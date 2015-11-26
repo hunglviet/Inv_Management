@@ -22,6 +22,17 @@ public class frmListStoreOutput extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         new CloseOtherWindows().closeWin();
         //this.lblHeader.setText(this.btnBinCard.getText());
+        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{
+                    {"Sale by customer"},
+                    {"Sale by product"},
+                    {"Sale by employee"}
+                    
+                },
+                new String[]{
+                    "Report"
+                }
+        ));
 
     }
 
@@ -344,7 +355,7 @@ public class frmListStoreOutput extends javax.swing.JFrame {
         );
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("INVENTORY MANAGMENT");
+        lblHeader.setText("STORE OUTPUT");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 lblHeaderComponentShown(evt);

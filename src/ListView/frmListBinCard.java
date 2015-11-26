@@ -201,11 +201,11 @@ public class frmListBinCard extends javax.swing.JFrame {
 
         SubMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null}
+                {},
+                {}
             },
             new String [] {
-                "Title 1"
+
             }
         ));
         jScrollPane2.setViewportView(SubMenu);
@@ -338,7 +338,7 @@ public class frmListBinCard extends javax.swing.JFrame {
         );
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("INVENTORY MANAGMENT");
+        lblHeader.setText("BIN CARD (BOOK STORE)");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 lblHeaderComponentShown(evt);
@@ -591,17 +591,7 @@ public class frmListBinCard extends javax.swing.JFrame {
         //tao menu report
         //tbReport = new javax.swing.JTable();
 
-        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                    {"Purchase by supplier"},
-                    {"Purchase by product"},
-                    {"Purchae by employee"}
-                    
-                },
-                new String[]{
-                    "Report"
-                }
-        ));
+        
     }//GEN-LAST:event_btnStoreInputActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

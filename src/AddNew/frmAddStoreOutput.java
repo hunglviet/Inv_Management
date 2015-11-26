@@ -104,7 +104,7 @@ public class frmAddStoreOutput extends javax.swing.JFrame {
 
         jLabel2.setText("Address");
 
-        jLabel5.setText("Deliverer");
+        jLabel5.setText("Delivery");
 
         jLabel6.setText("Description");
 

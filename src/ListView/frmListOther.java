@@ -21,6 +21,16 @@ public class frmListOther extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         new CloseOtherWindows().closeWin();
         //this.lblHeader.setText(this.btnBinCard.getText());
+        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{
+                    {"Category"},
+                    {"Country"},
+                    {"Delivery"},
+                    {"Department"},},
+                new String[]{
+                    "List of"
+                }
+        ));
 
     }
 
@@ -199,15 +209,6 @@ public class frmListOther extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
         );
 
-        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null}
-            },
-            new String [] {
-                "Title 1"
-            }
-        ));
         jScrollPane2.setViewportView(SubMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
@@ -338,7 +339,7 @@ public class frmListOther extends javax.swing.JFrame {
         );
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("INVENTORY MANAGMENT");
+        lblHeader.setText("OTHER");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 lblHeaderComponentShown(evt);
@@ -508,7 +509,7 @@ public class frmListOther extends javax.swing.JFrame {
 
         new frmListCustSupp().setVisible(true);
 
-       // this.lblHeader.setText(this.btnCustSup.getText());
+        // this.lblHeader.setText(this.btnCustSup.getText());
     }//GEN-LAST:event_btnCustSupActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
@@ -518,7 +519,7 @@ public class frmListOther extends javax.swing.JFrame {
 
         new frmListEmployee().setVisible(true);
         //this.lblHeader.setText(this.btnProduct.getText());
-       // this.lblHeader.setText(this.btnEmployee.getText());
+        // this.lblHeader.setText(this.btnEmployee.getText());
     }//GEN-LAST:event_btnEmployeeActionPerformed
 
     private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
@@ -526,7 +527,7 @@ public class frmListOther extends javax.swing.JFrame {
         new CloseOtherWindows().closeWin();
 
         new frmListProduct().setVisible(true);
-       // this.lblHeader.setText(this.btnProduct.getText());
+        // this.lblHeader.setText(this.btnProduct.getText());
 
 
     }//GEN-LAST:event_btnProductActionPerformed
@@ -535,7 +536,7 @@ public class frmListOther extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
         new frmListStoreOutput().setVisible(true);
-       // this.lblHeader.setText(this.btnProduct.getText());
+        // this.lblHeader.setText(this.btnProduct.getText());
     }//GEN-LAST:event_btnStoreOutputActionPerformed
 
     private void btnDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepartmentActionPerformed
@@ -544,14 +545,14 @@ public class frmListOther extends javax.swing.JFrame {
 
         new frmListDepartment().setVisible(true);
         //this.lblHeader.setText(this.btnProduct.getText());
-       // this.lblHeader.setText(this.btnDepartment.getText());
+        // this.lblHeader.setText(this.btnDepartment.getText());
     }//GEN-LAST:event_btnDepartmentActionPerformed
 
     private void btnBinCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinCardActionPerformed
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
         new frmListBinCard().setVisible(true);
-       // this.lblHeader.setText(this.btnBinCard.getText());
+        // this.lblHeader.setText(this.btnBinCard.getText());
     }//GEN-LAST:event_btnBinCardActionPerformed
 
     private void menuBarComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_menuBarComponentHidden
@@ -569,7 +570,7 @@ public class frmListOther extends javax.swing.JFrame {
 
         new frmListManufacture().setVisible(true);
         //this.lblHeader.setText(this.btnProduct.getText());
-       // this.lblHeader.setText(this.btnManufacture.getText());
+        // this.lblHeader.setText(this.btnManufacture.getText());
 
     }//GEN-LAST:event_btnManufactureActionPerformed
 
@@ -581,6 +582,7 @@ public class frmListOther extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
         new frmListOther().setVisible(true);
+
     }//GEN-LAST:event_btnOtherListActionPerformed
 
     private void btnStoreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreInputActionPerformed
@@ -591,17 +593,7 @@ public class frmListOther extends javax.swing.JFrame {
         //tao menu report
         //tbReport = new javax.swing.JTable();
 
-        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                    {"Purchase by supplier"},
-                    {"Purchase by product"},
-                    {"Purchae by employee"}
-                    
-                },
-                new String[]{
-                    "Report"
-                }
-        ));
+
     }//GEN-LAST:event_btnStoreInputActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
