@@ -5,12 +5,12 @@
  */
 package inv_management;
 
-import ListView.frmLisStoreOutputSplit;
+import ListView.frmListStoreOutput;
 import ListView.frmListBinCard;
 import ListView.frmListCustSupp;
 import ListView.frmListDepartment;
 import ListView.frmListEmployee;
-import ListView.frmListInwardStore;
+import ListView.frmListStoreInput;
 import ListView.frmListManufacture;
 import ListView.frmListOther;
 import ListView.frmListProduct;
@@ -27,7 +27,10 @@ public class frmMain extends javax.swing.JFrame {
     public frmMain() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        //this.jToolBar1.setEnabled(false);
         new CloseOtherWindows().closeWin();
+        
+        
         //this.lblHeader.setText(this.btnBinCard.getText());
 
     }
@@ -61,14 +64,14 @@ public class frmMain extends javax.swing.JFrame {
         SubMenu = new javax.swing.JTable();
         paneMenu = new javax.swing.JPanel();
         btnProduct = new javax.swing.JButton();
-        btnStoreOutputSplit = new javax.swing.JButton();
+        btnStoreOutput = new javax.swing.JButton();
         btnCustSup = new javax.swing.JButton();
         btnEmployee = new javax.swing.JButton();
         btnDepartment = new javax.swing.JButton();
         btnBinCard = new javax.swing.JButton();
         btnManufacture = new javax.swing.JButton();
         btnOtherList = new javax.swing.JButton();
-        btnInwardStore = new javax.swing.JButton();
+        btnStoreInput = new javax.swing.JButton();
         panelHeader = new javax.swing.JPanel();
         lblHeader = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
@@ -102,6 +105,7 @@ public class frmMain extends javax.swing.JFrame {
         footer.setLayout(new java.awt.GridLayout(1, 0));
 
         jToolBar1.setRollover(true);
+        jToolBar1.setEnabled(false);
         jToolBar1.setInheritsPopupMenu(true);
 
         jPanel3.setLayout(new java.awt.GridLayout(1, 0));
@@ -189,9 +193,9 @@ public class frmMain extends javax.swing.JFrame {
         TableLayout.setHorizontalGroup(
             TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TableLayout.createSequentialGroup()
-                .addContainerGap(498, Short.MAX_VALUE)
+                .addContainerGap(504, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jScrollPane1)
@@ -204,10 +208,8 @@ public class frmMain extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
         );
-
-        ScrollMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         SubMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -241,11 +243,11 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnStoreOutputSplit.setText("Store output split");
-        btnStoreOutputSplit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnStoreOutputSplit.addActionListener(new java.awt.event.ActionListener() {
+        btnStoreOutput.setText("Store output");
+        btnStoreOutput.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnStoreOutput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStoreOutputSplitActionPerformed(evt);
+                btnStoreOutputActionPerformed(evt);
             }
         });
 
@@ -297,11 +299,11 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnInwardStore.setText("Inward Stote");
-        btnInwardStore.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnInwardStore.addActionListener(new java.awt.event.ActionListener() {
+        btnStoreInput.setText("Store input");
+        btnStoreInput.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnStoreInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInwardStoreActionPerformed(evt);
+                btnStoreInputActionPerformed(evt);
             }
         });
 
@@ -314,22 +316,22 @@ public class frmMain extends javax.swing.JFrame {
                 .addGroup(paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnCustSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnStoreOutputSplit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStoreOutput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManufacture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnInwardStore, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnStoreInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         paneMenuLayout.setVerticalGroup(
             paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnInwardStore)
+                .addComponent(btnStoreInput)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnStoreOutputSplit)
+                .addComponent(btnStoreOutput)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBinCard)
                 .addGap(4, 4, 4)
@@ -347,6 +349,7 @@ public class frmMain extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
         lblHeader.setText("INVENTORY MANAGMENT");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
@@ -360,7 +363,7 @@ public class frmMain extends javax.swing.JFrame {
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblHeader)
+                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelHeaderLayout.setVerticalGroup(
@@ -466,21 +469,21 @@ public class frmMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ScrollMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(paneMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelHeader, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(footer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(footer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -489,12 +492,12 @@ public class frmMain extends javax.swing.JFrame {
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ScrollMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -540,16 +543,12 @@ public class frmMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnProductActionPerformed
 
-    private void lblHeaderComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lblHeaderComponentShown
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblHeaderComponentShown
-
-    private void btnStoreOutputSplitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreOutputSplitActionPerformed
+    private void btnStoreOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreOutputActionPerformed
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
-        new frmLisStoreOutputSplit().setVisible(true);
+        new frmListStoreOutput().setVisible(true);
        // this.lblHeader.setText(this.btnProduct.getText());
-    }//GEN-LAST:event_btnStoreOutputSplitActionPerformed
+    }//GEN-LAST:event_btnStoreOutputActionPerformed
 
     private void btnDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepartmentActionPerformed
         // TODO add your handling code here:
@@ -596,10 +595,10 @@ public class frmMain extends javax.swing.JFrame {
         new frmListOther().setVisible(true);
     }//GEN-LAST:event_btnOtherListActionPerformed
 
-    private void btnInwardStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInwardStoreActionPerformed
+    private void btnStoreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreInputActionPerformed
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
-        new frmListInwardStore().setVisible(true);
+        new frmListStoreInput().setVisible(true);
         //this.lblHeader.setText(this.btnInwardStore.getText());
         //tao menu report
         //tbReport = new javax.swing.JTable();
@@ -615,12 +614,16 @@ public class frmMain extends javax.swing.JFrame {
                     "Report"
                 }
         ));
-    }//GEN-LAST:event_btnInwardStoreActionPerformed
+    }//GEN-LAST:event_btnStoreInputActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         new frmChangePassword().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void lblHeaderComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lblHeaderComponentShown
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblHeaderComponentShown
 
     /**
      * @param args the command line arguments
@@ -669,11 +672,11 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JButton btnDepartment;
     private javax.swing.JButton btnEmployee;
     private javax.swing.JButton btnFind;
-    private javax.swing.JButton btnInwardStore;
     private javax.swing.JButton btnManufacture;
     private javax.swing.JButton btnOtherList;
     private javax.swing.JButton btnProduct;
-    private javax.swing.JButton btnStoreOutputSplit;
+    private javax.swing.JButton btnStoreInput;
+    private javax.swing.JButton btnStoreOutput;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
