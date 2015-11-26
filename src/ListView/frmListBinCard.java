@@ -200,15 +200,6 @@ public class frmListBinCard extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
         );
 
-        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
         jScrollPane2.setViewportView(SubMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
@@ -624,14 +615,7 @@ public class frmListBinCard extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmListBinCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
 
         /* Create and display the form */

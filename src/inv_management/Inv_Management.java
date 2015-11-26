@@ -5,8 +5,6 @@
  */
 package inv_management;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author lvhung

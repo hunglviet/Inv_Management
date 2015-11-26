@@ -600,7 +600,7 @@ public class frmMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
         new frmListStoreInput().setVisible(true);
-        //this.lblHeader.setText(this.btnInwardStore.getText());
+        this.lblHeader.setText(this.btnStoreInput.getText());
         //tao menu report
         //tbReport = new javax.swing.JTable();
 

@@ -215,15 +215,6 @@ public class frmListProduct extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
         );
 
-        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null}
-            },
-            new String [] {
-                "Title 1"
-            }
-        ));
         jScrollPane2.setViewportView(SubMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
