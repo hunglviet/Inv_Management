@@ -51,7 +51,7 @@ public class frmFindCategory extends javax.swing.JFrame {
         panelHeader.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getStyle() | java.awt.Font.BOLD, lblHeader.getFont().getSize()+10));
-        lblHeader.setText("FIND CUSTOMER / SUPPLIER");
+        lblHeader.setText("FIND CATEGORY");
         lblHeader.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);

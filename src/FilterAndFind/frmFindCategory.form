@@ -112,7 +112,7 @@
                     <Font bold="true" component="lblHeader" property="font" relativeSize="true" size="10"/>
                   </FontInfo>
                 </Property>
-                <Property name="text" type="java.lang.String" value="FIND CUSTOMER / SUPPLIER"/>
+                <Property name="text" type="java.lang.String" value="FIND CATEGORY"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
             </Component>

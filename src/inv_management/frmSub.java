@@ -5,6 +5,8 @@
  */
 package inv_management;
 
+import java.sql.Connection;
+
 /**
  *
  * @author lvhung
@@ -14,11 +16,20 @@ public class frmSub extends javax.swing.JFrame {
     /**
      * Creates new form frmMain
      */
+     private frmLoginOption frmloginoption;
+    public static Connection conn;
+    
     public frmSub() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        
         setTitle("INVENTORY MANAGMENT");
+        
+    }
+    public frmSub(frmLoginOption frmloginoption)
+    {
+        this.frmloginoption = frmloginoption;
+        initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -191,8 +202,7 @@ public class frmSub extends javax.swing.JFrame {
         /* If Windows (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        
-      
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if (info.getName().equals("Windows")) {
@@ -205,10 +215,9 @@ public class frmSub extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
-      
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
