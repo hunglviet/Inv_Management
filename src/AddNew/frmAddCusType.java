@@ -16,6 +16,7 @@ public class frmAddCusType extends javax.swing.JFrame {
      */
     public frmAddCusType() {
         initComponents();
+        setTitle("Add customer type");
     }
 
     /**

@@ -5,6 +5,8 @@
  */
 package inv_management;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author lvhung
@@ -18,6 +20,9 @@ public class Inv_Management {
         // TODO code application logic here
         
         new frmSub().setVisible(true); //Goi form khoi tao du lieu
+        
+        //sET TITLE CHO TAT CA CAC FORM
+        
         
         //Chon giao dien windows
         try {

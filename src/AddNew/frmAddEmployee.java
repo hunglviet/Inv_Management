@@ -5,10 +5,7 @@
  */
 package AddNew;
 
-import java.awt.BorderLayout;
 import java.awt.PopupMenu;
-import javax.swing.BoxLayout;
-import javax.swing.JPanel;
 
 /**
  *
@@ -25,6 +22,7 @@ public class frmAddEmployee extends javax.swing.JFrame {
      */
     public frmAddEmployee() {
         initComponents();
+        setTitle(this.lblHearder.getText());
         
     }
 
@@ -40,7 +38,7 @@ public class frmAddEmployee extends javax.swing.JFrame {
         buttonGroupGender = new javax.swing.ButtonGroup();
         panelMaster = new javax.swing.JPanel();
         panelHeader = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lblHearder = new javax.swing.JLabel();
         panelEntry = new javax.swing.JPanel();
         panelGeneral = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -104,8 +102,8 @@ public class frmAddEmployee extends javax.swing.JFrame {
 
         panelHeader.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel4.setFont(jLabel4.getFont().deriveFont(jLabel4.getFont().getStyle() | java.awt.Font.BOLD, jLabel4.getFont().getSize()+10));
-        jLabel4.setText("EMPLOYEE");
+        lblHearder.setFont(lblHearder.getFont().deriveFont(lblHearder.getFont().getStyle() | java.awt.Font.BOLD, lblHearder.getFont().getSize()+10));
+        lblHearder.setText("NEW EMPLOYEE");
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
@@ -113,14 +111,14 @@ public class frmAddEmployee extends javax.swing.JFrame {
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblHearder, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelHeaderLayout.setVerticalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
                 .addGap(0, 11, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblHearder, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -621,7 +619,6 @@ public class frmAddEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -645,6 +642,7 @@ public class frmAddEmployee extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblHearder;
     private javax.swing.JPanel panelContact;
     private javax.swing.JPanel panelEntry;
     private javax.swing.JPanel panelFooter;

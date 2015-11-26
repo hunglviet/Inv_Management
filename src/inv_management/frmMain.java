@@ -29,9 +29,8 @@ public class frmMain extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         //this.jToolBar1.setEnabled(false);
         new CloseOtherWindows().closeWin();
-        
-    
 
+        setTitle(this.lblHeader.getText());
         //this.lblHeader.setText(this.btnBinCard.getText());
     }
 
@@ -594,7 +593,7 @@ public class frmMain extends javax.swing.JFrame {
         new CloseOtherWindows().closeWin();
         new frmListOther().setVisible(true);
 
-        
+
     }//GEN-LAST:event_btnOtherListActionPerformed
 
     private void btnStoreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreInputActionPerformed
@@ -605,7 +604,7 @@ public class frmMain extends javax.swing.JFrame {
         //tao menu report
         //tbReport = new javax.swing.JTable();
 
-        
+
     }//GEN-LAST:event_btnStoreInputActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

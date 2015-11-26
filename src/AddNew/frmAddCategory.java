@@ -16,6 +16,7 @@ public class frmAddCategory extends javax.swing.JFrame {
      */
     public frmAddCategory() {
         initComponents();
+        setTitle("Add category");
     }
 
     /**

@@ -22,6 +22,11 @@ public class frmListStoreInput extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         new CloseOtherWindows().closeWin();
         //this.lblHeader.setText(this.btnBinCard.getText());
+        
+        
+        setTitle(this.lblHeader.getText());
+        
+        //
 
         SubMenu.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{

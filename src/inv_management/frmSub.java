@@ -17,6 +17,8 @@ public class frmSub extends javax.swing.JFrame {
     public frmSub() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        
+        setTitle("INVENTORY MANAGMENT");
     }
 
     /**

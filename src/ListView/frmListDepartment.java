@@ -22,6 +22,7 @@ public class frmListDepartment extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         new CloseOtherWindows().closeWin();
         //this.lblHeader.setText(this.btnBinCard.getText());
+        setTitle(this.lblHeader.getText());
 
     }
 

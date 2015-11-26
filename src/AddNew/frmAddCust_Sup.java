@@ -16,6 +16,8 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
      */
     public frmAddCust_Sup() {
         initComponents();
+        setTitle(this.lblHeader.getText());
+        
     }
 
     /**
@@ -30,7 +32,7 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         panelMaster = new javax.swing.JPanel();
         panelHeader = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lblHeader = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
@@ -90,8 +92,8 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
 
         panelHeader.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel4.setFont(jLabel4.getFont().deriveFont(jLabel4.getFont().getStyle() | java.awt.Font.BOLD, jLabel4.getFont().getSize()+10));
-        jLabel4.setText("CUSTOMER / SUPPLIER");
+        lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getStyle() | java.awt.Font.BOLD, lblHeader.getFont().getSize()+10));
+        lblHeader.setText("NEW CUSTOMER / SUPPLIER");
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Customer");
@@ -132,7 +134,7 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -142,7 +144,7 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
             .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -589,7 +591,6 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -612,6 +613,7 @@ public class frmAddCust_Sup extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblHeader;
     private javax.swing.JPanel panelContact;
     private javax.swing.JPanel panelEntry;
     private javax.swing.JPanel panelFooter;

@@ -18,6 +18,7 @@ public class frmFindProduct extends javax.swing.JFrame {
      */
     public frmFindProduct() {
         initComponents();
+        setTitle(this.lblHeader.getText());
     }
 
     /**
@@ -31,7 +32,7 @@ public class frmFindProduct extends javax.swing.JFrame {
 
         panelMaster = new javax.swing.JPanel();
         panelHeader = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lblHeader = new javax.swing.JLabel();
         panelEntry = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtFinder = new javax.swing.JTextField();
@@ -47,9 +48,9 @@ public class frmFindProduct extends javax.swing.JFrame {
 
         panelHeader.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel4.setFont(jLabel4.getFont().deriveFont(jLabel4.getFont().getStyle() | java.awt.Font.BOLD, jLabel4.getFont().getSize()+10));
-        jLabel4.setText("FIND PRODUCT");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getStyle() | java.awt.Font.BOLD, lblHeader.getFont().getSize()+10));
+        lblHeader.setText("FIND PRODUCT");
+        lblHeader.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
@@ -57,14 +58,14 @@ public class frmFindProduct extends javax.swing.JFrame {
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelHeaderLayout.setVerticalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
                 .addGap(0, 11, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -285,9 +286,9 @@ public class frmFindProduct extends javax.swing.JFrame {
     private javax.swing.JButton btnOK;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblHeader;
     private javax.swing.JPanel panelEntry;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelMaster;

@@ -16,6 +16,8 @@ public class frmAddTerm extends javax.swing.JFrame {
      */
     public frmAddTerm() {
         initComponents();
+        setTitle("Add new term");
+                
     }
 
     /**

@@ -16,6 +16,7 @@ public class frmAddPackage extends javax.swing.JFrame {
      */
     public frmAddPackage() {
         initComponents();
+        setTitle("Add new package");
     }
 
     /**

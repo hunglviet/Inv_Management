@@ -21,6 +21,10 @@ public class frmListOther extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         new CloseOtherWindows().closeWin();
         //this.lblHeader.setText(this.btnBinCard.getText());
+        //Sett title
+        setTitle(this.lblHeader.getText());
+        
+        //Tao submenu tu bang appmenu
         SubMenu.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {"Category"},

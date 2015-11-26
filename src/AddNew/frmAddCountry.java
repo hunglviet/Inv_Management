@@ -16,6 +16,7 @@ public class frmAddCountry extends javax.swing.JFrame {
      */
     public frmAddCountry() {
         initComponents();
+        setTitle("Add Country");
     }
 
     /**
