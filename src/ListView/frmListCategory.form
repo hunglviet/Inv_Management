@@ -272,9 +272,6 @@
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="bntEdit">
                   <Properties>
@@ -595,7 +592,7 @@
                 <Font component="lblHeader" property="font" relativeSize="true" size="5"/>
               </FontInfo>
             </Property>
-            <Property name="text" type="java.lang.String" value="MANUFACTURE"/>
+            <Property name="text" type="java.lang.String" value="CATEGORY"/>
           </Properties>
           <Events>
             <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="lblHeaderComponentShown"/>

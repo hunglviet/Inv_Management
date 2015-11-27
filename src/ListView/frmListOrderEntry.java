@@ -5,18 +5,20 @@
  */
 package ListView;
 
+import AddNew.frmAddStoreInput;
+import AddNew.frmAddStoreOutput;
 import inv_management.*;
 
 /**
  *
  * @author lvhung
  */
-public class frmListOther extends javax.swing.JFrame {
+public class frmListOrderEntry extends javax.swing.JFrame {
 
     /**
      * Creates new form frmMain
      */
-    public frmListOther() {
+    public frmListOrderEntry() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         //this.jToolBar1.setEnabled(false);
@@ -27,11 +29,11 @@ public class frmListOther extends javax.swing.JFrame {
         //Tao submenu
         SubMenu.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                    {"List category"},
-                    {"List Country"},
-                    {"List package"},
-                    {"List location"},
-                    {"List delivery"},},
+                    {"List store ouptut"},
+                    {"List store input"},
+                    
+                    
+                },
                 new String[]{""}
         ));
     }
@@ -114,6 +116,11 @@ public class frmListOther extends javax.swing.JFrame {
         btnAdd.setFocusable(false);
         btnAdd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAdd.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnAdd);
 
         bntEdit.setText("Edit");
@@ -344,7 +351,7 @@ public class frmListOther extends javax.swing.JFrame {
         );
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("OTHER");
+        lblHeader.setText("ORDER ENTRY");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 lblHeaderComponentShown(evt);
@@ -540,7 +547,7 @@ public class frmListOther extends javax.swing.JFrame {
     private void btnStoreOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreOutputActionPerformed
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
-        new frmListOrderEntry().setVisible(true);
+       new frmListOrderEntry().setVisible(true);
         // this.lblHeader.setText(this.btnProduct.getText());
     }//GEN-LAST:event_btnStoreOutputActionPerformed
 
@@ -604,26 +611,31 @@ public class frmListOther extends javax.swing.JFrame {
         // TODO add your handling code here:
         switch (this.SubMenu.getSelectedRow()) {
             case 0:
-                new frmListCategory().setVisible(true);
+                this.lblHeader.setText("STORE OUTPUT");
                 break;
             case 1:
-                new frmListCountry().setVisible(true);
+                this.lblHeader.setText("STORE INPUT");
                 break;
-            case 2:
-                new frmListPackage().setVisible(true);
-                break;
-            case 3:
-                new frmListLocation().setVisible(true);
-                break;
-            case 4:
-                new frmListDelivery().setVisible(true);
-                break;
-
+            
             default:
                 break;
         }
-
     }//GEN-LAST:event_SubMenuMouseClicked
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        switch (this.SubMenu.getSelectedRow()) {
+            case 0:
+                new frmAddStoreOutput().setVisible(true);
+                break;
+            case 1:
+                 new frmAddStoreInput().setVisible(true);
+                break;
+            
+            default:
+                break;
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -643,12 +655,8 @@ public class frmListOther extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmListOther.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmListOrderEntry.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -658,7 +666,7 @@ public class frmListOther extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmListOther().setVisible(true);
+                new frmListOrderEntry().setVisible(true);
             }
         });
     }

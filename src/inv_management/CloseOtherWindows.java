@@ -16,7 +16,7 @@ public class CloseOtherWindows {
     public void closeWin() {
         Window win[] = java.awt.Window.getWindows();
         //
-        for (int i = 0; i < win.length; i++) { //i=0 - dong het cac cua so dang mo; i=1 - dong các cua so dang mo, tru cua so mo dau tien
+        for (int i = 0; i < win.length ; i++) { //i=0 - dong het cac cua so dang mo; i=1 - dong các cua so dang mo, tru cua so mo dau tien
             win[i].dispose();
             win[i] = null;
         }

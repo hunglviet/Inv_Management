@@ -6,11 +6,11 @@
 package AddNew;
 
 import FilterAndFind.frmFindCustSup;
-import FilterAndFind.frmFindProduct;
 import FilterAndFind.frmFindStoreLocation;
 
 /**
  * Phieu nhap kho
+ *
  * @author lvhung
  */
 public class frmAddStoreInput extends javax.swing.JFrame {
@@ -21,7 +21,7 @@ public class frmAddStoreInput extends javax.swing.JFrame {
     public frmAddStoreInput() {
         initComponents();
         setTitle(this.lblHeader.getText());
-         
+
     }
 
     /**
@@ -69,6 +69,7 @@ public class frmAddStoreInput extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
         panelNavigator = new javax.swing.JPanel();
         Navigator = new javax.swing.JPanel();
         btnSave = new javax.swing.JButton();
@@ -76,7 +77,7 @@ public class frmAddStoreInput extends javax.swing.JFrame {
         panelTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
+        btnFindProduct = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
@@ -87,16 +88,16 @@ public class frmAddStoreInput extends javax.swing.JFrame {
         panelFooter = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
-        setTitle("STORE INPUT");
+        setTitle("STORE OUTPUT");
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getStyle() | java.awt.Font.BOLD, lblHeader.getFont().getSize()+10));
-        lblHeader.setText("NEW STORE INPUT SPLIT");
+        lblHeader.setText("STORE INPUT");
 
         panelEntry.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("General"));
 
-        jLabel1.setText("Customer");
+        jLabel1.setText("Supplier");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -273,16 +274,22 @@ public class frmAddStoreInput extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setText("APPROVAL");
+        jCheckBox1.setEnabled(false);
+
         javax.swing.GroupLayout panelEntryLayout = new javax.swing.GroupLayout(panelEntry);
         panelEntry.setLayout(panelEntryLayout);
         panelEntryLayout.setHorizontalGroup(
             panelEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEntryLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelEntryLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelEntryLayout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(jCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,7 +312,8 @@ public class frmAddStoreInput extends javax.swing.JFrame {
                         .addGroup(panelEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(jLabel9)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
+                            .addComponent(jButton2)
+                            .addComponent(jCheckBox1))
                         .addContainerGap())
                     .addGroup(panelEntryLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -378,10 +386,10 @@ public class frmAddStoreInput extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton3.setText("Find product");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnFindProduct.setText("Find product");
+        btnFindProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnFindProductActionPerformed(evt);
             }
         });
 
@@ -402,7 +410,7 @@ public class frmAddStoreInput extends javax.swing.JFrame {
                 .addGroup(panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(panelTableLayout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnFindProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(166, 166, 166)
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -425,7 +433,7 @@ public class frmAddStoreInput extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton3)
+                        .addComponent(btnFindProduct)
                         .addComponent(jLabel23)
                         .addComponent(jLabel25)
                         .addComponent(jLabel30))
@@ -517,10 +525,15 @@ public class frmAddStoreInput extends javax.swing.JFrame {
         new frmFindCustSup().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnFindProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindProductActionPerformed
         // TODO add your handling code here:
-        new frmFindProduct().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+       
+        //KeyStroke keyStrokeToOpen
+        //        = KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_DOWN_MASK);
+        //this.btnFindProduct.setAccelerator(keyStrokeToOpen);
+
+
+    }//GEN-LAST:event_btnFindProductActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -2612,13 +2625,14 @@ public class frmAddStoreInput extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Navigator;
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnFindProduct;
     private javax.swing.JButton btnSave;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private datechooser.beans.DateChooserCombo dateChooserCombo2;
     private datechooser.beans.DateChooserPanel dateChooserPanel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;

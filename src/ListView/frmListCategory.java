@@ -11,12 +11,12 @@ import inv_management.*;
  *
  * @author lvhung
  */
-public class frmListOther extends javax.swing.JFrame {
+public class frmListCategory extends javax.swing.JFrame {
 
     /**
      * Creates new form frmMain
      */
-    public frmListOther() {
+    public frmListCategory() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         //this.jToolBar1.setEnabled(false);
@@ -344,7 +344,7 @@ public class frmListOther extends javax.swing.JFrame {
         );
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("OTHER");
+        lblHeader.setText("CATEGORY");
         lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 lblHeaderComponentShown(evt);
@@ -622,7 +622,7 @@ public class frmListOther extends javax.swing.JFrame {
             default:
                 break;
         }
-
+        
     }//GEN-LAST:event_SubMenuMouseClicked
 
     /**
@@ -643,12 +643,8 @@ public class frmListOther extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmListOther.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmListCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -658,7 +654,7 @@ public class frmListOther extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmListOther().setVisible(true);
+                new frmListCategory().setVisible(true);
             }
         });
     }
