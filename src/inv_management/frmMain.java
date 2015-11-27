@@ -5,13 +5,12 @@
  */
 package inv_management;
 
-import ListView.frmListStoreOutput;
 import ListView.frmListBinCard;
-import ListView.frmListCustSupp;
+import ListView.frmListCust_Supp;
 import ListView.frmListDepartment;
 import ListView.frmListEmployee;
-import ListView.frmListStoreInput;
 import ListView.frmListManufacture;
+import ListView.frmListOrderEntry;
 import ListView.frmListOther;
 import ListView.frmListProduct;
 
@@ -32,6 +31,8 @@ public class frmMain extends javax.swing.JFrame {
 
         setTitle(this.lblHeader.getText());
         //this.lblHeader.setText(this.btnBinCard.getText());
+        //Tao submenu
+        
     }
 
     /**
@@ -70,7 +71,6 @@ public class frmMain extends javax.swing.JFrame {
         btnBinCard = new javax.swing.JButton();
         btnManufacture = new javax.swing.JButton();
         btnOtherList = new javax.swing.JButton();
-        btnStoreInput = new javax.swing.JButton();
         panelHeader = new javax.swing.JPanel();
         lblHeader = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
@@ -212,13 +212,18 @@ public class frmMain extends javax.swing.JFrame {
 
         SubMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null}
+                {},
+                {}
             },
             new String [] {
-                "Title 1"
+
             }
         ));
+        SubMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubMenuMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(SubMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
@@ -242,7 +247,7 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnStoreOutput.setText("Store output");
+        btnStoreOutput.setText("Order entry");
         btnStoreOutput.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnStoreOutput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,14 +303,6 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnStoreInput.setText("Store input");
-        btnStoreInput.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnStoreInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStoreInputActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout paneMenuLayout = new javax.swing.GroupLayout(paneMenu);
         paneMenu.setLayout(paneMenuLayout);
         paneMenuLayout.setHorizontalGroup(
@@ -320,16 +317,13 @@ public class frmMain extends javax.swing.JFrame {
                     .addComponent(btnDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManufacture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnStoreInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         paneMenuLayout.setVerticalGroup(
             paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnStoreInput)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnStoreOutput)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBinCard)
@@ -517,7 +511,7 @@ public class frmMain extends javax.swing.JFrame {
         //new frmAddCust_Sup().setVisible(true);
         new CloseOtherWindows().closeWin();
 
-        new frmListCustSupp().setVisible(true);
+        new frmListCust_Supp().setVisible(true);
 
         // this.lblHeader.setText(this.btnCustSup.getText());
     }//GEN-LAST:event_btnCustSupActionPerformed
@@ -545,7 +539,7 @@ public class frmMain extends javax.swing.JFrame {
     private void btnStoreOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreOutputActionPerformed
         // TODO add your handling code here:
         new CloseOtherWindows().closeWin();
-        new frmListStoreOutput().setVisible(true);
+        new frmListOrderEntry().setVisible(true);
         // this.lblHeader.setText(this.btnProduct.getText());
     }//GEN-LAST:event_btnStoreOutputActionPerformed
 
@@ -596,17 +590,6 @@ public class frmMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnOtherListActionPerformed
 
-    private void btnStoreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreInputActionPerformed
-        // TODO add your handling code here:
-        new CloseOtherWindows().closeWin();
-        new frmListStoreInput().setVisible(true);
-        this.lblHeader.setText(this.btnStoreInput.getText());
-        //tao menu report
-        //tbReport = new javax.swing.JTable();
-
-
-    }//GEN-LAST:event_btnStoreInputActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         new frmChangePassword().setVisible(true);
@@ -615,6 +598,23 @@ public class frmMain extends javax.swing.JFrame {
     private void lblHeaderComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lblHeaderComponentShown
         // TODO add your handling code here:
     }//GEN-LAST:event_lblHeaderComponentShown
+
+    private void SubMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubMenuMouseClicked
+        // TODO add your handling code here:
+        /*
+        switch (this.SubMenu.getSelectedRow()) {
+            case 0:
+                new frmListStoreOutput().setVisible(true);
+                break;
+            case 1:
+                new frmListStoreInput().setVisible(true);
+                break;
+
+            default:
+                break;
+        }
+        */
+    }//GEN-LAST:event_SubMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -666,7 +666,6 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JButton btnManufacture;
     private javax.swing.JButton btnOtherList;
     private javax.swing.JButton btnProduct;
-    private javax.swing.JButton btnStoreInput;
     private javax.swing.JButton btnStoreOutput;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
