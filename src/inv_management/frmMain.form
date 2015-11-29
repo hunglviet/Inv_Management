@@ -474,30 +474,45 @@
             <Property name="text" type="java.lang.String" value="Inward stock"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInwardActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnOutward">
           <Properties>
             <Property name="text" type="java.lang.String" value="Outwrad stock"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOutwardActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnStoreTransfer">
           <Properties>
             <Property name="text" type="java.lang.String" value="Transfer stock"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStoreTransferActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnBinCard">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bin Card (Book store)"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBinCardActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnOtherList">
           <Properties>
             <Property name="text" type="java.lang.String" value="Adjust Inventory"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOtherListActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

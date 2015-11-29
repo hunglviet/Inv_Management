@@ -5,6 +5,12 @@
  */
 package inv_management;
 
+import ListView.frmAdjustStock;
+import ListView.frmBinCard;
+import ListView.frmListInwardStock;
+import ListView.frmListOutWardStock;
+import ListView.frmListTransferStock;
+
 /**
  *
  * @author lvhung
@@ -249,18 +255,43 @@ public class frmMain extends javax.swing.JFrame {
 
         btnInward.setText("Inward stock");
         btnInward.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInwardActionPerformed(evt);
+            }
+        });
 
         btnOutward.setText("Outwrad stock");
         btnOutward.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOutward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOutwardActionPerformed(evt);
+            }
+        });
 
         btnStoreTransfer.setText("Transfer stock");
         btnStoreTransfer.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnStoreTransfer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStoreTransferActionPerformed(evt);
+            }
+        });
 
         btnBinCard.setText("Bin Card (Book store)");
         btnBinCard.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnBinCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBinCardActionPerformed(evt);
+            }
+        });
 
         btnOtherList.setText("Adjust Inventory");
         btnOtherList.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOtherList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOtherListActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout paneMenuLayout = new javax.swing.GroupLayout(paneMenu);
         paneMenu.setLayout(paneMenuLayout);
@@ -417,6 +448,32 @@ public class frmMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         new frmChangePassword().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btnInwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInwardActionPerformed
+        // TODO add your handling code here:
+        new frmListInwardStock().setVisible(true);
+       
+    }//GEN-LAST:event_btnInwardActionPerformed
+
+    private void btnOutwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOutwardActionPerformed
+        // TODO add your handling code here:
+        new frmListOutWardStock().setVisible(true);
+    }//GEN-LAST:event_btnOutwardActionPerformed
+
+    private void btnStoreTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreTransferActionPerformed
+        // TODO add your handling code here:
+        new frmListTransferStock().setVisible(true);
+    }//GEN-LAST:event_btnStoreTransferActionPerformed
+
+    private void btnBinCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinCardActionPerformed
+        // TODO add your handling code here:
+        new frmBinCard().setVisible(true);
+    }//GEN-LAST:event_btnBinCardActionPerformed
+
+    private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
+        // TODO add your handling code here:
+        new frmAdjustStock().setVisible(true);
+    }//GEN-LAST:event_btnOtherListActionPerformed
 
     /**
      * @param args the command line arguments

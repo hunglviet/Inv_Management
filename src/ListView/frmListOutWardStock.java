@@ -5,18 +5,22 @@
  */
 package ListView;
 
+import AddNew.frmAddOutWardStock;
 import inv_management.*;
+import ListView.frmAdjustStock;
+import ListView.frmBinCard;
+import ListView.frmListTransferStock;
 
 /**
  *
  * @author lvhung
  */
-public class frmListCountry extends javax.swing.JFrame {
+public class frmListOutWardStock extends javax.swing.JFrame {
 
     /**
      * Creates new form frmMain
      */
-    public frmListCountry() {
+    public frmListOutWardStock() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         //this.jToolBar1.setEnabled(false);
@@ -25,15 +29,25 @@ public class frmListCountry extends javax.swing.JFrame {
         setTitle(this.lblHeader.getText());
         //this.lblHeader.setText(this.btnBinCard.getText());
         //Tao submenu
-        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
+        AddMenu.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                    {"List category"},
-                    {"List Country"},
-                    {"List package"},
-                    {"List location"},
-                    {"List delivery"},},
-                new String[]{""}
+                    {"Inventory summary"},
+                    {"Purchases by supplier"},
+                    {"Purchases by employee"},
+                    {"Sale by customer"},
+                    {"Sale by employee"},
+                    {"List of product"},
+                    {"List of customer"},
+                    {"List of supplier"},
+                    {"List of employee"},
+                    {"List of department"},
+                    {"List of product category"},
+                    
+                },
+                new String[]{"Report"}
         ));
+
+        //Menu cac danh sach
     }
 
     /**
@@ -45,7 +59,6 @@ public class frmListCountry extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        footer = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -55,6 +68,8 @@ public class frmListCountry extends javax.swing.JFrame {
         bntPrint = new javax.swing.JButton();
         btnFind = new javax.swing.JButton();
         bntHelp = new javax.swing.JButton();
+        panelHeader = new javax.swing.JPanel();
+        lblHeader = new javax.swing.JLabel();
         Table = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -62,47 +77,32 @@ public class frmListCountry extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         ScrollMenu = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        SubMenu = new javax.swing.JTable();
+        AddMenu = new javax.swing.JTable();
         paneMenu = new javax.swing.JPanel();
-        btnProduct = new javax.swing.JButton();
-        btnStoreOutput = new javax.swing.JButton();
-        btnCustSup = new javax.swing.JButton();
-        btnEmployee = new javax.swing.JButton();
-        btnDepartment = new javax.swing.JButton();
+        btnInward = new javax.swing.JButton();
+        btnOutward = new javax.swing.JButton();
+        btnStoreTransfer = new javax.swing.JButton();
         btnBinCard = new javax.swing.JButton();
-        btnManufacture = new javax.swing.JButton();
         btnOtherList = new javax.swing.JButton();
-        panelHeader = new javax.swing.JPanel();
-        lblHeader = new javax.swing.JLabel();
+        footer = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         saveAsMenuItem = new javax.swing.JMenuItem();
         openMenuItem = new javax.swing.JMenuItem();
         saveMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
         helpMenu = new javax.swing.JMenu();
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inventory Managment");
-        addWindowStateListener(new java.awt.event.WindowStateListener() {
-            public void windowStateChanged(java.awt.event.WindowEvent evt) {
-                formWindowStateChanged(evt);
-            }
-        });
-
-        footer.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        footer.setLayout(new java.awt.GridLayout(1, 0));
 
         jToolBar1.setRollover(true);
         jToolBar1.setEnabled(false);
@@ -114,6 +114,11 @@ public class frmListCountry extends javax.swing.JFrame {
         btnAdd.setFocusable(false);
         btnAdd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAdd.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnAdd);
 
         bntEdit.setText("Edit");
@@ -165,6 +170,26 @@ public class frmListCountry extends javax.swing.JFrame {
 
         jToolBar1.add(jPanel2);
 
+        lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
+        lblHeader.setText("OUTWARD STOCK");
+
+        javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
+        panelHeader.setLayout(panelHeaderLayout);
+        panelHeaderLayout.setHorizontalGroup(
+            panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelHeaderLayout.setVerticalGroup(
+            panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelHeaderLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(lblHeader)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         Table.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jTable1.setAutoCreateRowSorter(true);
@@ -178,11 +203,6 @@ public class frmListCountry extends javax.swing.JFrame {
         ));
         jTable1.setCellSelectionEnabled(true);
         jTable1.setInheritsPopupMenu(true);
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
@@ -211,7 +231,7 @@ public class frmListCountry extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
         );
 
-        SubMenu.setModel(new javax.swing.table.DefaultTableModel(
+        AddMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {}
@@ -220,12 +240,10 @@ public class frmListCountry extends javax.swing.JFrame {
 
             }
         ));
-        SubMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SubMenuMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(SubMenu);
+        AddMenu.setInheritsPopupMenu(true);
+        AddMenu.setShowHorizontalLines(false);
+        AddMenu.setShowVerticalLines(false);
+        jScrollPane2.setViewportView(AddMenu);
 
         javax.swing.GroupLayout ScrollMenuLayout = new javax.swing.GroupLayout(ScrollMenu);
         ScrollMenu.setLayout(ScrollMenuLayout);
@@ -240,43 +258,27 @@ public class frmListCountry extends javax.swing.JFrame {
 
         paneMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnProduct.setText("Product");
-        btnProduct.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnProduct.addActionListener(new java.awt.event.ActionListener() {
+        btnInward.setText("Inward stock");
+        btnInward.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInward.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProductActionPerformed(evt);
+                btnInwardActionPerformed(evt);
             }
         });
 
-        btnStoreOutput.setText("Order entry");
-        btnStoreOutput.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnStoreOutput.addActionListener(new java.awt.event.ActionListener() {
+        btnOutward.setText("Outwrad stock");
+        btnOutward.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOutward.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStoreOutputActionPerformed(evt);
+                btnOutwardActionPerformed(evt);
             }
         });
 
-        btnCustSup.setText("Customer/Supplier");
-        btnCustSup.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnCustSup.addActionListener(new java.awt.event.ActionListener() {
+        btnStoreTransfer.setText("Transfer stock");
+        btnStoreTransfer.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnStoreTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCustSupActionPerformed(evt);
-            }
-        });
-
-        btnEmployee.setText("Employee");
-        btnEmployee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEmployeeActionPerformed(evt);
-            }
-        });
-
-        btnDepartment.setText("Department");
-        btnDepartment.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnDepartment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDepartmentActionPerformed(evt);
+                btnStoreTransferActionPerformed(evt);
             }
         });
 
@@ -288,15 +290,7 @@ public class frmListCountry extends javax.swing.JFrame {
             }
         });
 
-        btnManufacture.setText("Manufacture");
-        btnManufacture.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnManufacture.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManufactureActionPerformed(evt);
-            }
-        });
-
-        btnOtherList.setText("Other lists");
+        btnOtherList.setText("Adjust Inventory");
         btnOtherList.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOtherList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,68 +305,31 @@ public class frmListCountry extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnCustSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnStoreOutput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStoreTransfer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManufacture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnOtherList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOutward, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInward, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         paneMenuLayout.setVerticalGroup(
             paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnStoreOutput)
+                .addComponent(btnInward, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBinCard)
-                .addGap(4, 4, 4)
-                .addComponent(btnProduct)
+                .addComponent(btnOutward, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCustSup)
+                .addComponent(btnStoreTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnManufacture)
+                .addComponent(btnBinCard, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDepartment)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEmployee)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOtherList)
+                .addComponent(btnOtherList, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("COUNTRY");
-        lblHeader.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                lblHeaderComponentShown(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
-        panelHeader.setLayout(panelHeaderLayout);
-        panelHeaderLayout.setHorizontalGroup(
-            panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHeaderLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelHeaderLayout.setVerticalGroup(
-            panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHeaderLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(lblHeader)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        menuBar.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                menuBarComponentHidden(evt);
-            }
-        });
+        footer.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        footer.setLayout(new java.awt.GridLayout(1, 0));
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -404,26 +361,30 @@ public class frmListCountry extends javax.swing.JFrame {
 
         menuBar.add(fileMenu);
 
-        editMenu.setMnemonic('e');
-        editMenu.setText("Edit");
+        jMenu1.setText("Employee");
 
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
-        editMenu.add(cutMenuItem);
+        jMenuItem1.setText("Change password");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
 
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
-        editMenu.add(copyMenuItem);
+        menuBar.add(jMenu1);
 
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
-        editMenu.add(pasteMenuItem);
+        jMenu4.setText("Order entry");
+        menuBar.add(jMenu4);
 
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
-        editMenu.add(deleteMenuItem);
+        jMenu2.setText("List");
 
-        menuBar.add(editMenu);
+        jMenuItem2.setText("Product");
+        jMenu2.add(jMenuItem2);
+
+        jMenu3.setText("jMenu3");
+        jMenu2.add(jMenu3);
+
+        menuBar.add(jMenu2);
 
         helpMenu.setMnemonic('h');
         helpMenu.setText("Help");
@@ -437,25 +398,6 @@ public class frmListCountry extends javax.swing.JFrame {
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
-
-        jMenu1.setText("Employee");
-
-        jMenuItem1.setText("Change password");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
-
-        menuBar.add(jMenu1);
-
-        jMenu2.setText("List");
-
-        jMenuItem2.setText("Product");
-        jMenu2.add(jMenuItem2);
-
-        menuBar.add(jMenu2);
 
         setJMenuBar(menuBar);
 
@@ -507,122 +449,41 @@ public class frmListCountry extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void btnCustSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSupActionPerformed
-        // TODO add your handling code here:
-        //new frmAddCust_Sup().setVisible(true);
-        new CloseOtherWindows().closeWin();
-
-        new frmListCust_Supp().setVisible(true);
-
-        // this.lblHeader.setText(this.btnCustSup.getText());
-    }//GEN-LAST:event_btnCustSupActionPerformed
-
-    private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
-        // TODO add your handling code here:
-        //new frmAddEmployee().setVisible(true);
-        new CloseOtherWindows().closeWin();
-
-        new frmListEmployee().setVisible(true);
-        //this.lblHeader.setText(this.btnProduct.getText());
-        // this.lblHeader.setText(this.btnEmployee.getText());
-    }//GEN-LAST:event_btnEmployeeActionPerformed
-
-    private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
-        // TODO add your handling code here:
-        new CloseOtherWindows().closeWin();
-
-        new frmListProduct().setVisible(true);
-        // this.lblHeader.setText(this.btnProduct.getText());
-
-
-    }//GEN-LAST:event_btnProductActionPerformed
-
-    private void btnStoreOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreOutputActionPerformed
-        // TODO add your handling code here:
-        new CloseOtherWindows().closeWin();
-        new frmListOrderEntry().setVisible(true);
-        // this.lblHeader.setText(this.btnProduct.getText());
-    }//GEN-LAST:event_btnStoreOutputActionPerformed
-
-    private void btnDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepartmentActionPerformed
-        // TODO add your handling code here:
-        new CloseOtherWindows().closeWin();
-
-        new frmListDepartment().setVisible(true);
-        //this.lblHeader.setText(this.btnProduct.getText());
-        // this.lblHeader.setText(this.btnDepartment.getText());
-    }//GEN-LAST:event_btnDepartmentActionPerformed
-
-    private void btnBinCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinCardActionPerformed
-        // TODO add your handling code here:
-        new CloseOtherWindows().closeWin();
-        new frmListBinCard().setVisible(true);
-        // this.lblHeader.setText(this.btnBinCard.getText());
-    }//GEN-LAST:event_btnBinCardActionPerformed
-
-    private void menuBarComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_menuBarComponentHidden
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuBarComponentHidden
-
-    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowStateChanged
-
-    private void btnManufactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManufactureActionPerformed
-        // TODO add your handling code here:
-        //new frmAddManufacture().setVisible(true);
-        new CloseOtherWindows().closeWin();
-
-        new frmListManufacture().setVisible(true);
-        //this.lblHeader.setText(this.btnProduct.getText());
-        // this.lblHeader.setText(this.btnManufacture.getText());
-
-    }//GEN-LAST:event_btnManufactureActionPerformed
-
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1MouseClicked
-
-    private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
-        // TODO add your handling code here:
-        new CloseOtherWindows().closeWin();
-        new frmListOther().setVisible(true);
-
-
-    }//GEN-LAST:event_btnOtherListActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         new frmChangePassword().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void lblHeaderComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lblHeaderComponentShown
+    private void btnInwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInwardActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblHeaderComponentShown
+        new frmListInwardStock().setVisible(true);
+       
+    }//GEN-LAST:event_btnInwardActionPerformed
 
-    private void SubMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubMenuMouseClicked
+    private void btnOutwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOutwardActionPerformed
         // TODO add your handling code here:
-       switch (this.SubMenu.getSelectedRow()) {
-            case 0:
-                new frmListCategory().setVisible(true);
-                break;
-            case 1:
-                new frmListCountry().setVisible(true);
-                break;
-            case 2:
-                new frmListPackage().setVisible(true);
-                break;
-            case 3:
-                new frmListLocation().setVisible(true);
-                break;
-            case 4:
-                new frmListDelivery().setVisible(true);
-                break;
+       // new frmListOutWardStock().setVisible(true);
+    }//GEN-LAST:event_btnOutwardActionPerformed
 
-            default:
-                break;
-        }
-    }//GEN-LAST:event_SubMenuMouseClicked
+    private void btnStoreTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreTransferActionPerformed
+        // TODO add your handling code here:
+        new frmListTransferStock().setVisible(true);
+    }//GEN-LAST:event_btnStoreTransferActionPerformed
+
+    private void btnBinCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinCardActionPerformed
+        // TODO add your handling code here:
+        new frmBinCard().setVisible(true);
+    }//GEN-LAST:event_btnBinCardActionPerformed
+
+    private void btnOtherListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherListActionPerformed
+        // TODO add your handling code here:
+        new frmAdjustStock().setVisible(true);
+    }//GEN-LAST:event_btnOtherListActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        new frmAddOutWardStock().setVisible(true);
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -642,8 +503,12 @@ public class frmListCountry extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmListCountry.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmListOutWardStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -653,14 +518,14 @@ public class frmListCountry extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmListCountry().setVisible(true);
+                new frmListOutWardStock().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable AddMenu;
     private javax.swing.JPanel ScrollMenu;
-    private javax.swing.JTable SubMenu;
     private javax.swing.JPanel Table;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JButton bntEdit;
@@ -668,20 +533,13 @@ public class frmListCountry extends javax.swing.JFrame {
     private javax.swing.JButton bntPrint;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBinCard;
-    private javax.swing.JButton btnCustSup;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnDepartment;
-    private javax.swing.JButton btnEmployee;
     private javax.swing.JButton btnFind;
-    private javax.swing.JButton btnManufacture;
+    private javax.swing.JButton btnInward;
     private javax.swing.JButton btnOtherList;
-    private javax.swing.JButton btnProduct;
-    private javax.swing.JButton btnStoreOutput;
+    private javax.swing.JButton btnOutward;
+    private javax.swing.JButton btnStoreTransfer;
     private javax.swing.JMenuItem contentsMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
-    private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JPanel footer;
@@ -689,6 +547,8 @@ public class frmListCountry extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel2;
@@ -703,7 +563,6 @@ public class frmListCountry extends javax.swing.JFrame {
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JPanel paneMenu;
     private javax.swing.JPanel panelHeader;
-    private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
