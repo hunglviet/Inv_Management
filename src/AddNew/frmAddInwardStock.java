@@ -6,6 +6,7 @@
 package AddNew;
 
 import FilterAndFind.frmFindCustSup;
+import FilterAndFind.frmFindProduct;
 import FilterAndFind.frmFindStoreLocation;
 
 /**
@@ -527,6 +528,7 @@ public class frmAddInwardStock extends javax.swing.JFrame {
 
     private void btnFindProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindProductActionPerformed
         // TODO add your handling code here:
+        new frmFindProduct().setVisible(true);
        
         //KeyStroke keyStrokeToOpen
         //        = KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_DOWN_MASK);
