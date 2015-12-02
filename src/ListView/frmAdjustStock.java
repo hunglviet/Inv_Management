@@ -37,7 +37,7 @@ public class frmAdjustStock extends javax.swing.JFrame {
                     {"List of supplier"},
                     {"List of employee"},
                     {"List of department"},
-                    {"List of product category"},
+                    {"List product category"},
                     
                 },
                 new String[]{"Report"}

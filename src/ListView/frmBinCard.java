@@ -6,9 +6,6 @@
 package ListView;
 
 import inv_management.*;
-import ListView.frmAdjustStock;
-import ListView.frmBinCard;
-import ListView.frmListTransferStock;
 
 /**
  *
