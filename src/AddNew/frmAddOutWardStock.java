@@ -8,6 +8,7 @@ package AddNew;
 import FilterAndFind.frmFindCustSup;
 import FilterAndFind.frmFindProduct;
 import FilterAndFind.frmFindStoreLocation;
+import AddIn.AutoCompletion;
 
 /**
  * Phieu nhap kho
@@ -21,6 +22,7 @@ public class frmAddOutWardStock extends javax.swing.JFrame {
     public frmAddOutWardStock() {
         initComponents();
         setTitle(this.lblHeader.getText());
+        AutoCompletion.enable(jComboBox1);
          
     }
 
