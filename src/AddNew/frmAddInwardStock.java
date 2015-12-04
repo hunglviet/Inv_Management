@@ -8,6 +8,7 @@ package AddNew;
 import FilterAndFind.frmFindCustSup;
 import FilterAndFind.frmFindProduct;
 import FilterAndFind.frmFindStoreLocation;
+import AddIn.AutoCompletion;
 
 /**
  * Phieu nhap kho
@@ -22,6 +23,8 @@ public class frmAddInwardStock extends javax.swing.JFrame {
     public frmAddInwardStock() {
         initComponents();
         setTitle(this.lblHeader.getText());
+        AutoCompletion.enable(jComboBox1);
+        AutoCompletion.enable(jComboBox2);
 
     }
 
@@ -65,8 +68,6 @@ public class frmAddInwardStock extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jTextField17 = new javax.swing.JTextField();
-        jLabel29 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
@@ -227,8 +228,6 @@ public class frmAddInwardStock extends javax.swing.JFrame {
 
         jTextField17.setEditable(false);
 
-        jLabel29.setText("Paid");
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -237,13 +236,11 @@ public class frmAddInwardStock extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField15)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField18))
+                    .addComponent(jTextField17, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -257,10 +254,6 @@ public class frmAddInwardStock extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel27)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel29)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -4694,7 +4687,6 @@ public class frmAddInwardStock extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel5;
@@ -4712,7 +4704,6 @@ public class frmAddInwardStock extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;

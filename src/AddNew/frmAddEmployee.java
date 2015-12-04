@@ -6,6 +6,7 @@
 package AddNew;
 
 import java.awt.PopupMenu;
+import AddIn.AutoCompletion;
 
 /**
  *
@@ -23,6 +24,9 @@ public class frmAddEmployee extends javax.swing.JFrame {
     public frmAddEmployee() {
         initComponents();
         setTitle(this.lblHearder.getText());
+        AutoCompletion.enable(jComboBox1);
+        AutoCompletion.enable(jComboBox2);
+                
         
     }
 

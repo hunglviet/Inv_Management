@@ -162,7 +162,7 @@ public class frmBinCard extends javax.swing.JFrame {
         jToolBar1.add(jPanel2);
 
         lblHeader.setFont(lblHeader.getFont().deriveFont(lblHeader.getFont().getSize()+5f));
-        lblHeader.setText("BIN CARD");
+        lblHeader.setText("BOOK STORE");
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);

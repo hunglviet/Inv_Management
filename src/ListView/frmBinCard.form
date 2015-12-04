@@ -307,7 +307,7 @@
                 <Font component="lblHeader" property="font" relativeSize="true" size="5"/>
               </FontInfo>
             </Property>
-            <Property name="text" type="java.lang.String" value="BIN CARD"/>
+            <Property name="text" type="java.lang.String" value="BOOK STORE"/>
           </Properties>
         </Component>
       </SubComponents>

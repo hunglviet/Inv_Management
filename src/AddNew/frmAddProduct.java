@@ -6,9 +6,9 @@
 package AddNew;
 
 import FilterAndFind.frmFindCategory;
-import FilterAndFind.frmFindCustSup;
 import FilterAndFind.frmFindManufacture;
 import FilterAndFind.frmFindPackage;
+import AddIn.AutoCompletion;
 
 /**
  *
@@ -26,6 +26,9 @@ public class frmAddProduct extends javax.swing.JFrame {
     public frmAddProduct() {
         initComponents();
         setTitle(this.lblHeader.getText());
+        AutoCompletion.enable(jComboBox1);
+        AutoCompletion.enable(jComboBox2);
+        AutoCompletion.enable(jComboBox5);
     }
 
     /**

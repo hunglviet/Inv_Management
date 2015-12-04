@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package AddNew;
+import AddIn.AutoCompletion;
 
 /**
  *
@@ -17,6 +18,8 @@ public class frmAddManufacture extends javax.swing.JFrame {
     public frmAddManufacture() {
         initComponents();
         setTitle(this.lblHeader.getText());
+        AutoCompletion.enable(jComboBox4);
+                
     }
 
     /**

@@ -23,6 +23,7 @@ public class frmAddOutWardStock extends javax.swing.JFrame {
         initComponents();
         setTitle(this.lblHeader.getText());
         AutoCompletion.enable(jComboBox1);
+        AutoCompletion.enable(jComboBox2);
          
     }
 
