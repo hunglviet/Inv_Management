@@ -39,9 +39,9 @@ public class frmLogin extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        chkForgetPassword = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
+        btnForgetPassword = new javax.swing.JButton();
         panelNavigator = new javax.swing.JPanel();
         Navigator = new javax.swing.JPanel();
         btnSave = new javax.swing.JButton();
@@ -61,11 +61,12 @@ public class frmLogin extends javax.swing.JFrame {
 
         jLabel5.setText("Password");
 
-        chkForgetPassword.setText("Remember password");
-
         jLabel4.setText("User");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnForgetPassword.setText("Forget password");
+        btnForgetPassword.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
 
         javax.swing.GroupLayout panelEntryLayout = new javax.swing.GroupLayout(panelEntry);
         panelEntry.setLayout(panelEntryLayout);
@@ -79,9 +80,9 @@ public class frmLogin extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addGroup(panelEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnForgetPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBox1, 0, 187, Short.MAX_VALUE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                    .addComponent(chkForgetPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -103,9 +104,8 @@ public class frmLogin extends javax.swing.JFrame {
                 .addGroup(panelEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel5)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkForgetPassword)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnForgetPassword))
         );
 
         Navigator.setLayout(new java.awt.GridLayout(1, 0, 4, 0));
@@ -235,13 +235,14 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        if(this.chkForgetPassword.isSelected()==false){
+       /*
+        if(this.chkRememberPassword.isSelected()==false){
         new frmMain().setVisible(true);
         }
         else{
         new frmResetPassword().setVisible(true);
         }
-            
+         */   
         
         
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -295,8 +296,8 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JPanel Navigator;
     private javax.swing.JButton bntHelp;
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnForgetPassword;
     private javax.swing.JButton btnSave;
-    private javax.swing.JCheckBox chkForgetPassword;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
