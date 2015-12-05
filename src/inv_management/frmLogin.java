@@ -67,6 +67,11 @@ public class frmLogin extends javax.swing.JFrame {
 
         btnForgetPassword.setText("Forget password");
         btnForgetPassword.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnForgetPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnForgetPasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelEntryLayout = new javax.swing.GroupLayout(panelEntry);
         panelEntry.setLayout(panelEntryLayout);
@@ -243,18 +248,25 @@ public class frmLogin extends javax.swing.JFrame {
         new frmResetPassword().setVisible(true);
         }
          */   
+       new frmMain().setVisible(true);
         
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new frmLoginOption().setVisible(true);
-        new CloseOtherWindows().closeWin1();
+       
+        new CloseOtherWindows().closeWin();
+         new frmLoginOption().setVisible(true);
         
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnForgetPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForgetPasswordActionPerformed
+        // TODO add your handling code here:
+        new frmResetPassword().setVisible(true);
+    }//GEN-LAST:event_btnForgetPasswordActionPerformed
 
     /**
      * @param args the command line arguments
